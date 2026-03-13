@@ -181,14 +181,9 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
 
-      const count =
-        data?.queue_count ??
-        data?.count       ??
-        data?.total       ??
-        data?.people      ??
-        (typeof data === 'number' ? data : null);
+     const count = Array.isArray(data) ? data.length : null;
 
-      if (count === null) throw new Error('campo não encontrado — veja o console');
+if (count === null) throw new Error('resposta inesperada da API — veja o console');
 
       elCount.textContent = count;
       elUnit.textContent  = count === 1 ? 'pessoa' : 'pessoas';
