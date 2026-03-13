@@ -181,7 +181,7 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
 
-     const count = Array.isArray(data) ? data.length : null;
+     const count = Array.isArray(data) ? Math.max(0, data.length - 1) : null;
 
 if (count === null) throw new Error('resposta inesperada da API — veja o console');
 
