@@ -1,0 +1,12 @@
+{
+  "name": "casa-branca-fila",
+  "version": "1.0.0",
+  "description": "Display de fila — Restaurante Casa Branca",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
